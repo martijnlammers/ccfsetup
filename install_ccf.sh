@@ -22,7 +22,5 @@ sudo apt-get install python3-pip
 
 ##Install the CCF
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
-
 sudo apt update
-
 sudo /opt/ccf/bin/cchost --version
