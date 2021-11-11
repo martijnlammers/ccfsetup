@@ -1,8 +1,6 @@
 #Declare what version of CCF you want to use
 export CCF_VERSION=1.0.13
 
-sudo apt update
-
 #Get the CCF binary
 wget https://github.com/microsoft/CCF/releases/download/ccf-${CCF_VERSION}/ccf_${CCF_VERSION}_amd64.deb
 
