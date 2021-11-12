@@ -32,7 +32,11 @@ wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add 
 sudo apt update
 
 sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-ex libprotobuf17 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
+
+##Python packages
 sudo apt-get install python3-pip
+sudo apt install python3.8-venv
+sudo pip3 install cimetrics
 
 ##Install the CCF
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
