@@ -29,12 +29,13 @@ wget -qO - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/20.04/prod focal main" | sudo tee /etc/apt/sources.list.d/msprod.list
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
+sudo apt update
+
 sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-ex libprotobuf17 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
 sudo apt-get install python3-pip
 
 ##Install the CCF
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
-sudo apt update
 
 ##Clear previous versions
 sudo rm -r ./CCF
