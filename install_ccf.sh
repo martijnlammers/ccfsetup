@@ -4,8 +4,8 @@ ccfversion=1.0.13
 while [ "$1" != "" ]; do
     case $1 in 
         -v|--version)
-            ccfversion=$1
-            shift 2
+            ccfversion=$2
+            shift
             ;;
     esac
     shift
