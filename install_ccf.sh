@@ -36,10 +36,12 @@ sudo apt-get install python3-pip
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
 sudo apt update
 
-##Clone the official repository
+##Clear previous versions
 sudo rm -r ./CCF
 sudo rm -r ./ccf
 sudo rm -r ./ccfrepository
+
+##Clone the official repository
 git clone https://github.com/microsoft/CCF.git
 
 ##Copy and rename directories
