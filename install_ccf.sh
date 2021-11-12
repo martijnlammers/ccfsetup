@@ -1,5 +1,12 @@
+ccfversion=1.0.13
+
+if [ -z "$1" ]
+  then
+    ccfversion=$1
+fi
+
 #Declare what version of CCF you want to use
-export CCF_VERSION=1.0.13
+export CCF_VERSION=$ccfversion
 
 #Get the CCF binary
 wget https://github.com/microsoft/CCF/releases/download/ccf-${CCF_VERSION}/ccf_${CCF_VERSION}_amd64.deb
