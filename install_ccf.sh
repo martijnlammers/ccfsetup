@@ -38,10 +38,11 @@ sudo apt update
 
 ##Clone the official repository
 sudo rm -r ./CCF
+sudo rm -r ./ccfrepository
 git clone https://github.com/microsoft/CCF.git
 
 ##Move and rename directories.
-mv /opt/ccf/ ./ccf/
-mv ./CCF ./ccfrepository
+sudo mv /opt/ccf/ ./ccf/
+sudo mv ./CCF ./ccfrepository
 
 sudo /opt/ccf/bin/cchost --version
