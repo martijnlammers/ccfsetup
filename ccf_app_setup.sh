@@ -4,11 +4,13 @@ cd ~
 #Install necessities
 sudo apt install nodejs
 sudo apt install npm
-sudo npm install typescript
+
 
 #Create app structure
 mkdir ~/app_building_dir
-
+cd ~/app_building_dir
+sudo npm install typescript
+cd ~
 
 #Sample app.json file
 #Find more explanation here: https://microsoft.github.io/CCF/ccf-1.0.13/build_apps/js_app_bundle.html
@@ -53,6 +55,10 @@ export function abc(request: ccfapp.Request): ccfapp.Response {
     }
 }
 EOT
+
+
+
+
 
 
 
