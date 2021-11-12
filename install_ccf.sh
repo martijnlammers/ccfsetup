@@ -38,6 +38,7 @@ sudo apt update
 
 ##Clone the official repository
 sudo rm -r ./CCF
+sudo rm -r ./ccf
 sudo rm -r ./ccfrepository
 git clone https://github.com/microsoft/CCF.git
 
