@@ -1,5 +1,5 @@
 #Setup the path to your working directory
-PATH_HERE=$(dirname "$(realpath -s "$0")")
+#PATH_HERE=$(dirname "$(realpath -s "$0")")
 
 #Declare what version of CCF you want to use
 ccfversion=1.0.13
