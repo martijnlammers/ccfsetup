@@ -12,7 +12,7 @@ mkdir ~/app_building_dir
 
 #Sample app.json file
 #Find more explanation here: https://microsoft.github.io/CCF/ccf-1.0.13/build_apps/js_app_bundle.html
-cat <<EOT >> ~/app_building_dir/src/app.json
+cat <<EOT >> ~/app_building_dir/app.json
 {
   "endpoints": {'
     "/sample": {
