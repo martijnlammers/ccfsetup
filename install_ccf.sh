@@ -1,11 +1,11 @@
-ccfversion=1.0.13
 
+#Declare what version of CCF you want to use
+ccfversion=1.0.13
 if [ -z "$1" ]
   then
     ccfversion=$1
 fi
 
-#Declare what version of CCF you want to use
 export CCF_VERSION=$ccfversion
 
 #Get the CCF binary
