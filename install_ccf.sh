@@ -42,8 +42,8 @@ sudo rm -r ./ccfrepository
 git clone https://github.com/microsoft/CCF.git
 
 ##Copy and rename directories
-sudo mv /opt/ccf/ ./ccf/
-sudo cp ./CCF ./ccfrepository
+sudo cp /opt/ccf/ ./ccf/
+sudo mv ./CCF ./ccfrepository
 
 #Check if it installed properly
 sudo /opt/ccf/bin/cchost --version
