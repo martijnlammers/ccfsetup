@@ -1,3 +1,5 @@
+#Setup the path to your working directory
+PATH_HERE=$(dirname "$(realpath -s "$0")")
 
 #Declare what version of CCF you want to use
 ccfversion=1.0.13
@@ -13,7 +15,7 @@ done
 
 export CCF_VERSION=$ccfversion
 
-#Get the CCF binary
+#Get CCF
 wget https://github.com/microsoft/CCF/releases/download/ccf-${CCF_VERSION}/ccf_${CCF_VERSION}_amd64.deb
 
 ##Install OpenEnclave
@@ -33,4 +35,13 @@ sudo apt-get install python3-pip
 ##Install the CCF
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
 sudo apt update
+
+##Clone the official repository
+sudo rm -r ./CCF
+git clone https://github.com/microsoft/CCF.git
+
+##Move and rename directories.
+mv /opt/ccf/ ./ccf/
+mv ./CCF ./ccfrepository
+
 sudo /opt/ccf/bin/cchost --version
