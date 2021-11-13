@@ -54,6 +54,9 @@ git clone https://github.com/microsoft/CCF.git
 sudo cp -r /opt/ccf/ ./ccf/
 sudo mv ./CCF ./ccfrepository
 
+##Setup VM
+sh ~/ccfrelease/getting_started/setup_vm/run.sh ccf-dev.yml
+
 #Check if it installed properly
 sudo /opt/ccf/bin/cchost --version
 
