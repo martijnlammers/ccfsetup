@@ -16,7 +16,7 @@ cd ~
 #Find more explanation here: https://microsoft.github.io/CCF/ccf-1.0.13/build_apps/js_app_bundle.html
 cat <<EOT >> ~/app_building_dir/app.json
 {
-  "endpoints": {'
+  "endpoints": {
     "/sample": {
       "post": {
         "js_module": "endpoints/sample.js",
