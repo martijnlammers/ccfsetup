@@ -37,6 +37,7 @@ sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-e
 sudo apt-get install python3-pip
 sudo apt install python3.8-venv
 sudo pip install cimetrics
+sudo pip install ccf
 
 ##Install the CCF
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
