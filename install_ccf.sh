@@ -29,7 +29,12 @@ wget -qO - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/20.04/prod focal main" | sudo tee /etc/apt/sources.list.d/msprod.list
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
+
 sudo apt update
+sudo apt -y install dkms
+wget https://download.01.org/intel-sgx/sgx-linux/2.13.3/linux/distro/ubuntu20.04-server/sgx_linux_x64_driver_1.41.bin -O sgx_linux_x64_driver.bin
+chmod +x sgx_linux_x64_driver.bin
+sudo ./sgx_linux_x64_driver.bin
 
 sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-ex libprotobuf17 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
 
@@ -55,7 +60,9 @@ sudo cp -r /opt/ccf/ ./ccf/
 sudo mv ./CCF ./ccfrepository
 
 ##Setup VM
-sh ~/ccfrelease/getting_started/setup_vm/run.sh ccf-dev.yml
+cd /opt/ccf/getting_started/setup_vm
+sudo sh run.sh driver.yml
+sudo sh run.sh ccf-dev.yml
 
 #Check if it installed properly
 sudo /opt/ccf/bin/cchost --version
