@@ -40,8 +40,8 @@ export * from "./sample";
 EOT
 #Create sample endpoint only console logging the request body.
 cat <<EOT >> ~/app_building_dir/src/endpoints/sample.ts
-import * as ccfapp from 'ccf-app';
-export function abc(request: ccfapp.Request): ccfapp.Response {
+import * as ccf from '@microsoft/ccf-app';
+export function outputrequest(request: ccf.Request): ccf.Response {
     // access request details
     const data = request.body.json();
     // process request
