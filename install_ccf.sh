@@ -38,6 +38,7 @@ sudo ./sgx_linux_x64_driver.bin
 
 sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-ex libprotobuf17 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
 
+sudo apt update
 ##Python packages
 sudo apt-get install python3-pip
 sudo apt install python3.8-venv
@@ -45,6 +46,7 @@ sudo pip3 install cimetrics
 sudo pip3 install ccf
 
 ##Install the CCF
+sudo apt update
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
 
 ##Clear previous versions
@@ -60,6 +62,7 @@ sudo cp -r /opt/ccf/ ./ccf/
 sudo mv ./CCF ./ccfrepository
 
 ##Setup VM
+sudo apt update
 cd /opt/ccf/getting_started/setup_vm
 sudo sh run.sh driver.yml
 sudo sh run.sh ccf-dev.yml
