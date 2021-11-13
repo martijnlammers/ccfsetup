@@ -12,7 +12,7 @@ done
 
 export CCF_VERSION=$ccfversion
 ##Package.json
-cat <<EOT >> ~/app_building_dir/tsconfig.json
+cat <<EOT >> ~/app_building_dir/package.json
 {
   "private": true,
   "scripts": {
