@@ -25,6 +25,8 @@ sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-e
 sudo apt-get update
 sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
 sudo apt install python3.8-venv
+sudo apt install python3-pip
+sudo pip3 install ccf
 
 ##Clone the official repository
 git clone https://github.com/microsoft/CCF.git
