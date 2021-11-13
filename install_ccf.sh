@@ -37,5 +37,4 @@ sudo mv ./CCF ./ccfrepository
 sudo /opt/ccf/bin/cchost --version
 
 #Cleanup
-cd ~
 sudo rm -r ccf_1.0.13_amd64.deb*
