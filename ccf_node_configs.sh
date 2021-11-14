@@ -1,4 +1,8 @@
-cat <<EOT >> ~/start.ini
+mkdir ~/network
+mkdir ~/network/configurations
+mkdir ~/network/certificates
+
+cat <<EOT >> ~/network/configurations/start.ini
 
 # Configuration for your enclave image and type. If you're not running SGX supported hardware
 # you would need to change these to 'libjs_generic.enclave.so.signed' and 'virtual' respectively
