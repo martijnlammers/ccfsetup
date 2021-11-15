@@ -1,8 +1,18 @@
 #Setup the path to your working directory
 #PATH_HERE=$(dirname "$(realpath -s "$0")")
+ccfversion=1.0.13
+while [ "$1" != "" ]; do
+    case $1 in 
+        -v|--version)
+            ccfversion=$2
+            shift
+            ;;
+    esac
+    shift
+done
 
 #Declare what version of CCF you want to use
-export CCF_VERSION=1.0.13
+export CCF_VERSION=ccfversion
 
 #Get CCF
 wget https://github.com/microsoft/CCF/releases/download/ccf-${CCF_VERSION}/ccf_${CCF_VERSION}_amd64.deb
