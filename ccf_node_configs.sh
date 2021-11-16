@@ -3,6 +3,8 @@ cd ~
 mkdir ~/network
 mkdir ~/network/configurations
 mkdir ~/network/certificates
+mkdir ~/network/ledgers
+mkdir ~/network/snapshots
 
 PATH_HERE=$(pwd)
 PUB_IP=$(curl ifconfig.co)
@@ -26,8 +28,8 @@ node-address = ${PRIV_IP}:6600
 public-rpc-address = ${PUB_IP}:443
 
 # Locations where you will generate the ledger dir, cert and pid file
-ledger-dir = ${PATH_HERE}/network/legder/
-snapshot-dir = ${PATH_HERE}/network/snapshots/
+ledger-dir = ${PATH_HERE}/network/legders/ledger
+snapshot-dir = ${PATH_HERE}/network/snapshots/snapshot
 node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
 
@@ -56,6 +58,9 @@ enclave-type = release
 consensus = cft
 rpc-address = ${PRIV_IP}:8000
 node-address =${PRIV_IP}:6700
+ledger-dir = ${PATH_HERE}/network/ledgers/ledger1
+snapshot-dir = ${PATH_HERE}/network/snapshots/snapshots1
+node-cert-file = ${PATH_HERE}/network/certificates/node_cert1.pem
 public-rpc-address = ${PUB_IP}:8000
 san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
 [join]
@@ -74,12 +79,14 @@ consensus = cft
 rpc-address = ${PRIV_IP}:443
 node-address = ${PRIV_IP}:6600
 public-rpc-address = ${PUB_IP}:443
-ledger-dir = ${PATH_HERE}/network/legder/
-node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
+ledger-dir = ${PATH_HERE}/network/ledgers/ledger
+snapshot-dir = ${PATH_HERE}/network/snapshots/snapshots0
+node-cert-file = ${PATH_HERE}/network/certificates/node_cert0.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
-san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
+#san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
 
 [recover]
+network-cert-file = ${PATH_HERE}/network/certificates/network_cert0.pem
 
 
 EOT
