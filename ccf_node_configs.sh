@@ -31,7 +31,7 @@ node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
 
 # Your DNS, if you have one.
-san = "dNSName:partical.uksouth.cloudapp.azure.com"
+san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
 
 [start]
 
@@ -53,9 +53,10 @@ cat <<EOT >> ~/network/configurations/join_node.ini
 enclave-file = ${PATH_HERE}/ccfrelease/lib/libjs_generic.enclave.so.signed
 enclave-type = release
 consensus = cft
-rpc-address = ${PRIV_IP}:8888
+rpc-address = ${PRIV_IP}:443
 node-address =${PRIV_IP}:6600
-public-rpc-address = ${PUB_IP}:8888
+public-rpc-address = ${PUB_IP}:443
+san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
 [join]
 
 #Thesame network certificate the previous node generates
@@ -66,6 +67,19 @@ target-rpc-address = ${PRIV_IP}:443
 
 EOT
 cat <<EOT >> ~/network/configurations/recover_node.ini
+; config.ini
+enclave-file = ./libjs_generic.enclave.so.signed
+enclave-type = release
+consensus = cft
+rpc-address = ${PRIV_IP}:443
+node-address = ${PRIV_IP}:6600
+public-rpc-address = ${PUB_IP}:443
+ledger-dir = ledger-dir = ${PATH_HERE}/network/legder/
+node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
+node-pid-file = ${PATH_HERE}/network/cchost.pid
+san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
+
+[recover]
 
 
 EOT
