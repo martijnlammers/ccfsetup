@@ -67,7 +67,7 @@ target-rpc-address = ${PRIV_IP}:443
 
 EOT
 cat <<EOT >> ~/network/configurations/recover_node.ini
-enclave-file = ./libjs_generic.enclave.so.signed
+enclave-file = ${PATH_HERE}/ccfrelease/lib/libjs_generic.enclave.so.signed
 enclave-type = release
 consensus = cft
 rpc-address = ${PRIV_IP}:443
