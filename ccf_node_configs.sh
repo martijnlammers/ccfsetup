@@ -54,9 +54,9 @@ cat <<EOT >> ~/network/configurations/join_node.ini
 enclave-file = ${PATH_HERE}/ccfrelease/lib/libjs_generic.enclave.so.signed
 enclave-type = release
 consensus = cft
-rpc-address = ${PRIV_IP}:443
-node-address =${PRIV_IP}:6600
-public-rpc-address = ${PUB_IP}:443
+rpc-address = ${PRIV_IP}:8000
+node-address =${PRIV_IP}:6700
+public-rpc-address = ${PUB_IP}:8000
 san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
 [join]
 
@@ -74,7 +74,7 @@ consensus = cft
 rpc-address = ${PRIV_IP}:443
 node-address = ${PRIV_IP}:6600
 public-rpc-address = ${PUB_IP}:443
-ledger-dir = ledger-dir = ${PATH_HERE}/network/legder/
+ledger-dir = ${PATH_HERE}/network/legder/
 node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
 san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
