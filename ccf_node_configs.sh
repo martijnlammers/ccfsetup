@@ -49,4 +49,23 @@ EOT
 
 cat <<EOT >> ~/network/configurations/join_node.ini
 
+#Node configuration
+enclave-file = ${PATH_HERE}/ccfrelease/lib/libjs_generic.enclave.so.signed
+enclave-type = release
+consensus = cft
+rpc-address = ${PRIV_IP}:8888
+node-address =${PRIV_IP}:6600
+public-rpc-address = ${PUB_IP}:8888
+[join]
+
+#Thesame network certificate the previous node generates
+network-cert-file = ${PATH_HERE}/network/certificates/network_cert.pem
+
+##The address of the starting node you want to join
+target-rpc-address = ${PRIV_IP}:443
+
+EOT
+cat <<EOT >> ~/network/configurations/recover_node.ini
+
+
 EOT
