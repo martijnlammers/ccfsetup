@@ -28,7 +28,7 @@ node-address = ${PRIV_IP}:6600
 public-rpc-address = ${PUB_IP}:443
 
 # Locations where you will generate the ledger dir, cert and pid file
-ledger-dir = ${PATH_HERE}/network/legders/ledger
+ledger-dir = ${PATH_HERE}/network/ledgers/ledger
 snapshot-dir = ${PATH_HERE}/network/snapshots/snapshot
 node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
