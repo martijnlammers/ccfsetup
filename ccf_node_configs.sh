@@ -83,7 +83,7 @@ ledger-dir = ${PATH_HERE}/network/ledgers/ledger
 snapshot-dir = ${PATH_HERE}/network/snapshots/snapshots0
 node-cert-file = ${PATH_HERE}/network/certificates/node_cert0.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
-#san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
+san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
 
 [recover]
 network-cert-file = ${PATH_HERE}/network/certificates/network_cert0.pem
