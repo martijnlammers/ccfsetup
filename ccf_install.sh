@@ -37,6 +37,7 @@ sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
 sudo apt install python3.8-venv
 sudo apt install python3-pip
 sudo pip3 install ccf
+sudo apt install jq
 
 ##Clone the official repository
 git clone https://github.com/microsoft/CCF.git
