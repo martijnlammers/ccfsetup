@@ -1,6 +1,7 @@
 mkdir ~/client
-sudo apt install node-typescript
+
 cat <<EOT >> ~/client/sample.ts
+
 const http = require('https');
 const fs = require('fs')
 
