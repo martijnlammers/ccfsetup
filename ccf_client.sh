@@ -1,7 +1,6 @@
 mkdir ~/client
 
 cat <<EOT >> ~/client/sample.ts
-
 const http = require('https');
 const fs = require('fs')
 
@@ -40,5 +39,4 @@ req.on('error', (e) => {
 // Write data to request body
 req.write(postData);
 req.end();
-
 EOT
