@@ -1,11 +1,15 @@
-mkdir ~/client
+PATH_HERE=$(pwd)
+mkdir $PATH_HERE/client
+cd $PATH_HERE/client
 
-cat <<EOT >> ~/client/sample.ts
+cat <<EOT >> ${PATH_HERE}/client/sample.ts
 const http = require('https');
 const fs = require('fs')
+
 const postData = JSON.stringify({
   'msg': 'Hello server!'
 });
+
 const options = {
   hostname: 'particaldemo1.uksouth.cloudapp.azure.com',
   port: 443,
@@ -17,6 +21,7 @@ const options = {
     'Content-Length': Buffer.byteLength(postData)
   }
 };
+
 const req = http.request(options, (res) => {
   console.log(`STATUS: ${res.statusCode}`);
   console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
@@ -28,9 +33,11 @@ const req = http.request(options, (res) => {
     console.log('No more data in response.');
   });
 });
+
 req.on('error', (e) => {
   console.error(`problem with request: ${e.message}`);
 });
+
 // Write data to request body
 req.write(postData);
 req.end();
