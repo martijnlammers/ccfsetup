@@ -9,7 +9,7 @@ const options = {
   hostname: 'particaldemo1.uksouth.cloudapp.azure.com',
   port: 443,
   path: '/app/sample',
-  ca: fs.readFileSync('./certs/network_cert.pem'),
+  ca: fs.readFileSync('~/network/certificates/network_cert.pem'),
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
