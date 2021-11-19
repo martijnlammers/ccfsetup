@@ -1,6 +1,6 @@
 # Shell to automatically deploy template app/network
 # Important to note that you still need to reconfigure some settings as thing like 
-# your DNS cannot be configured generically.
+# your DNS arent being configured generically
 bash ~/ccfsetup/ccf_install.sh
 bash ~/ccfsetup/ccf_app_setup.sh
 bash ~/ccfsetup/ccf_app_config.sh
