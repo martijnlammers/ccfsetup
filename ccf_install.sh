@@ -39,11 +39,17 @@ sudo apt install python3-pip
 sudo pip3 install ccf
 sudo apt install jq
 
+##Get repo 
+git clone https://github.com/microsoft/CCF.git
+
 ##Copy and rename directories
 sudo cp -r /opt/ccf/ ./ccfrelease/
 sudo mv ./CCF ./ccfrepository
 
 #Check if it installed properly
 sudo /opt/ccf/bin/cchost --version
+
+#Cleanup
+sudo rm -r ccf_1.0.13_amd64*
 
 
