@@ -1,3 +1,15 @@
+DNS="no addr"
+while [ "$1" != "" ]; do
+    case $1 in 
+        -h|--host)
+            DNS=$2
+            shift
+            ;;
+    esac
+    shift
+done
+
+
 sudo apt install net-tools
 cd ~
 mkdir ~/network
@@ -9,6 +21,7 @@ mkdir ~/network/snapshots
 PATH_HERE=$(pwd)
 PUB_IP=$(curl ifconfig.co)
 PRIV_IP=$(hostname -i)
+
 
 cat <<EOT >> ~/network/configurations/start_node.ini
 
@@ -34,7 +47,7 @@ node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
 
 # Your DNS, if you have one.
-san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
+san = ${DNS}
 
 [start]
 
@@ -62,7 +75,7 @@ ledger-dir = ${PATH_HERE}/network/ledgers/ledger1
 snapshot-dir = ${PATH_HERE}/network/snapshots/snapshots1
 node-cert-file = ${PATH_HERE}/network/certificates/node_cert1.pem
 public-rpc-address = ${PUB_IP}:8000
-san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
+san = ${DNS}
 [join]
 
 #Thesame network certificate the previous node generates
@@ -83,7 +96,7 @@ ledger-dir = ${PATH_HERE}/network/ledgers/ledger
 snapshot-dir = ${PATH_HERE}/network/snapshots/snapshots0
 node-cert-file = ${PATH_HERE}/network/certificates/node_cert0.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
-san = "dNSName:particaldemo1.uksouth.cloudapp.azure.com"
+san = ${DNS}
 
 [recover]
 network-cert-file = ${PATH_HERE}/network/certificates/network_cert0.pem
