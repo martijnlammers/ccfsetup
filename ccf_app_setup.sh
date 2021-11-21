@@ -1,20 +1,20 @@
-#Hello world :)
+#!/bin/bash
 cd ~
-
+PATH_HERE=$(pwd)
 #Install necessities
 sudo apt install nodejs
 sudo apt install npm
 
 
 #Create app structure
-mkdir ~/app_building_dir
-cd ~/app_building_dir
+mkdir ${PATH_HERE}/app_building_dir
+cd ${PATH_HERE}/app_building_dir
 sudo npm install typescript
-cd ~
+cd ${PATH_HERE}
 
 #Sample app.json file
 #Find more explanation here: https://microsoft.github.io/CCF/ccf-1.0.13/build_apps/js_app_bundle.html
-cat <<EOT >> ~/app_building_dir/app.json
+cat <<EOT >> ${PATH_HERE}/app_building_dir/app.json
 {
   "endpoints": {
     "/sample": {
@@ -31,15 +31,15 @@ cat <<EOT >> ~/app_building_dir/app.json
   }
 }
 EOT
-mkdir ~/app_building_dir/src
-mkdir ~/app_building_dir/src/endpoints
+mkdir ${PATH_HERE}/app_building_dir/src
+mkdir ${PATH_HERE}/app_building_dir/src/endpoints
 
-cat <<EOT >> ~/app_building_dir/src/endpoints/all.ts
+cat <<EOT >> ${PATH_HERE}/app_building_dir/src/endpoints/all.ts
 // Add all other used endpoints here.
 export * from "./sample";
 EOT
 #Create sample endpoint only console logging the request body.
-cat <<EOT >> ~/app_building_dir/src/endpoints/sample.ts
+cat <<EOT >> ${PATH_HERE}/app_building_dir/src/endpoints/sample.ts
 import * as ccf from '@microsoft/ccf-app';
 export function outputrequest(request: ccf.Request): ccf.Response {
     // access request details
