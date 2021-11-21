@@ -1,4 +1,6 @@
+#!/bin/bash
 DNS="no addr"
+PATH_HERE=$(pwd)
 while [ "$1" != "" ]; do
     case $1 in 
         -h|--host)
@@ -11,19 +13,18 @@ done
 
 
 sudo apt install net-tools
-cd ~
-mkdir ~/network
-mkdir ~/network/configurations
-mkdir ~/network/certificates
-mkdir ~/network/ledgers
-mkdir ~/network/snapshots
+cd ${PATH_HERE}
+mkdir ${PATH_HERE}/network
+mkdir ${PATH_HERE}/network/configurations
+mkdir ${PATH_HERE}/network/certificates
+mkdir ${PATH_HERE}/network/ledgers
+mkdir ${PATH_HERE}/network/snapshots
 
-PATH_HERE=$(pwd)
 PUB_IP=$(curl ifconfig.co)
 PRIV_IP=$(hostname -i)
 
 
-cat <<EOT >> ~/network/configurations/start_node.ini
+cat <<EOT >> ${PATH_HERE}/network/configurations/start_node.ini
 
 # Configuration for your enclave image and type. If you're not running SGX supported hardware
 # you would need to change these to 'libjs_generic.virtual.so' and 'virtual' respectively
@@ -63,7 +64,7 @@ member-info = "${PATH_HERE}/network/certificates/Member_cert.pem,${PATH_HERE}/ne
 constitution=[${PATH_HERE}/ccfrelease/bin/actions.js,${PATH_HERE}/ccfrelease/bin/validate.js,${PATH_HERE}/ccfrelease/bin/resolve.js,${PATH_HERE}/ccfrelease/bin/apply.js]
 EOT
 
-cat <<EOT >> ~/network/configurations/join_node.ini
+cat <<EOT >> ${PATH_HERE}/network/configurations/join_node.ini
 
 #Node configuration
 enclave-file = ${PATH_HERE}/ccfrelease/lib/libjs_generic.enclave.so.signed
@@ -85,7 +86,7 @@ network-cert-file = ${PATH_HERE}/network/certificates/network_cert.pem
 target-rpc-address = ${PRIV_IP}:443
 
 EOT
-cat <<EOT >> ~/network/configurations/recover_node.ini
+cat <<EOT >> ${PATH_HERE}/network/configurations/recover_node.ini
 enclave-file = ${PATH_HERE}/ccfrelease/lib/libjs_generic.enclave.so.signed
 enclave-type = release
 consensus = cft
