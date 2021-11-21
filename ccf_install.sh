@@ -12,7 +12,7 @@ while [ "$1" != "" ]; do
 done
 
 #Declare what version of CCF you want to use
-CCF_VERSION=ccfversion
+CCF_VERSION=${ccfversion}
 
 #Get CCF
 wget https://github.com/microsoft/CCF/releases/download/ccf-${CCF_VERSION}/ccf_${CCF_VERSION}_amd64.deb
