@@ -1,3 +1,5 @@
+#!/bin/bash
+PATH_HERE=$(pwd)
 #Declare what version of CCF you want to use
 ccfversion=1.0.13
 while [ "$1" != "" ]; do
@@ -12,7 +14,7 @@ done
 
 export CCF_VERSION=$ccfversion
 ##Package.json
-cat <<EOT >> ~/app_building_dir/package.json
+cat <<EOT >> ${PATH_HERE}/app_building_dir/package.json
 {
   "private": true,
   "scripts": {
@@ -46,7 +48,7 @@ EOT
 
 
 #Typescript to Javascript conversion options
-cat <<EOT >> ~/app_building_dir/tsconfig.json
+cat <<EOT >> ${PATH_HERE}/app_building_dir/tsconfig.json
 {
   "compilerOptions": {
     "lib": [
@@ -68,7 +70,7 @@ cat <<EOT >> ~/app_building_dir/tsconfig.json
 EOT
 
 ##Rollup config, for removing duplicate modules.
-cat <<EOT >> ~/app_building_dir/rollup.config.js
+cat <<EOT >> ${PATH_HERE}/app_building_dir/rollup.config.js
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
