@@ -1,5 +1,5 @@
 #!/bin/bash
-DNS="no addr"
+DNS="no addr given"
 while [ "$1" != "" ]; do
     case $1 in 
         -h|--host)
