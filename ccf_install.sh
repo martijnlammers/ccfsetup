@@ -32,9 +32,7 @@ sudo apt update
 sudo apt -y install clang-10 libssl-dev gdb libsgx-enclave-common libsgx-quote-ex libprotobuf17 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
 
 ##Install the CCF
-sudo apt-get update
-sudo apt install ./ccf_${CCF_VERSION}_amd64.deb
-sudo apt install python3.8-venv
+sudo apt-get update && sudo apt install ./ccf_${CCF_VERSION}_amd64.deb && sudo apt install python3.8-venv
 sudo apt install python3-pip
 sudo pip3 install ccf
 sudo apt install jq
