@@ -48,7 +48,8 @@ node-cert-file = ${PATH_HERE}/network/certificates/node_cert.pem
 node-pid-file = ${PATH_HERE}/network/cchost.pid
 
 # Your DNS, if you have one.
-san = ${DNS}
+san = "dNSName:${DNS}"
+# dNSName:yourhost
 
 [start]
 
