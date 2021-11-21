@@ -1,8 +1,9 @@
 #!/bin/sh
-sudo rm -r ./network/cchost.pid
-sudo rm -r ./network/ledgers/ledger/
-sudo rm -r ./network/snapshots/snapshot
-sudo rm -r ./network/certificates/network_cert.pem
-sudo rm -r ./network/certificates/node_cert.pem
-sudo ./ccfrelease/bin/cchost --config=./network/configurations/start_node.ini
+PATH_HERE=$(pwd)
+sudo rm -r ${PATH_HERE}/network/cchost.pid
+sudo rm -r ${PATH_HERE}/network/ledgers/ledger/
+sudo rm -r ${PATH_HERE}/network/snapshots/snapshot
+sudo rm -r ${PATH_HERE}/network/certificates/network_cert.pem
+sudo rm -r ${PATH_HERE}/network/certificates/node_cert.pem
+sudo ${PATH_HERE}/ccfrelease/bin/cchost --config=${PATH_HERE}/network/configurations/start_node.ini
 
