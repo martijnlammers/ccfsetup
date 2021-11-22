@@ -33,7 +33,7 @@ PROPID=$(scurl.sh https://${DNS}/gov/proposals\
 --signing-cert ${PATH_HERE}/network/certificates/Member_cert.pem \
 --data-binary @set_js_app_proposal.json \
 -H "content-type: application/json")
-PROPID=$(PROPID | jq -r '.proposal_id')
+PROPID=$(${PROPID} | jq -r '.proposal_id')
 
 python3 -m ccf.proposal_generator transition_service_to_open
 PROPID=$(scurl.sh https://${DNS}/\
