@@ -14,6 +14,7 @@ cd ${PATH_HERE}
 
 #Sample app.json file
 #Find more explanation here: https://microsoft.github.io/CCF/ccf-1.0.13/build_apps/js_app_bundle.html
+sudo rm -r ${PATH_HERE}/app_building_dir/app.json
 cat <<EOT >> ${PATH_HERE}/app_building_dir/app.json
 {
   "endpoints": {
@@ -33,7 +34,7 @@ cat <<EOT >> ${PATH_HERE}/app_building_dir/app.json
 EOT
 mkdir ${PATH_HERE}/app_building_dir/src
 mkdir ${PATH_HERE}/app_building_dir/src/endpoints
-
+sudo rm -r ${PATH_HERE}/app_building_dir/src/endpoints/all.ts
 cat <<EOT >> ${PATH_HERE}/app_building_dir/src/endpoints/all.ts
 // Add all other used endpoints here.
 export * from "./sample";
