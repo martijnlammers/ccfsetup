@@ -14,6 +14,7 @@ done
 
 export CCF_VERSION=$ccfversion
 ##Package.json
+sudo rm -r ${PATH_HERE}/app_building_dir/package.json
 cat <<EOT >> ${PATH_HERE}/app_building_dir/package.json
 {
   "private": true,
@@ -48,6 +49,7 @@ EOT
 
 
 #Typescript to Javascript conversion options
+sudo rm -r ${PATH_HERE}/app_building_dir/tsconfig.json
 cat <<EOT >> ${PATH_HERE}/app_building_dir/tsconfig.json
 {
   "compilerOptions": {
@@ -70,6 +72,7 @@ cat <<EOT >> ${PATH_HERE}/app_building_dir/tsconfig.json
 EOT
 
 ##Rollup config, for removing duplicate modules.
+sudo rm -r ${PATH_HERE}/app_building_dir/rollup.config.js
 cat <<EOT >> ${PATH_HERE}/app_building_dir/rollup.config.js
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
